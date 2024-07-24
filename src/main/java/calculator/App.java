@@ -14,15 +14,19 @@ public class App {
 
         while (isRunning) {
 
-            /* 입력 값 받기 */
+            /* 첫 번째 입력 값 받기 */
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int num1 = sc.nextInt();
-            System.out.print("두 번째 숫자를 입력하세요: ");
-            int num2 = sc.nextInt();
 
             /* 사칙연산 기호 받기 */
             System.out.print("사칙연산 기호를 입력하세요(+, -, *, /): ");
             char operator = sc.next().charAt(0);
+
+            /* 두 번째 입력 값 받기 */
+            System.out.print("두 번째 숫자를 입력하세요: ");
+            int num2 = sc.nextInt();
+
+
 
             /* 버퍼 초기화 */
             sc.nextLine();
@@ -57,6 +61,17 @@ public class App {
             String remove = sc.nextLine();
             if (remove.equals("remove")){
                 results.remove(0);
+            } else {
+                System.out.println("잘 못된 입력입니다.");
+            }
+
+            /* 저장된 연산 결과 전부 조회 */
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            String inquiry = sc.nextLine();
+            if (inquiry.equals("inquiry")){
+                System.out.println("저장된 연산 결과 : " + results.toString());
+            } else {
+                System.out.println("잘 못된 입력입니다.");
             }
 
             /* 종료 여부 확인 */
