@@ -1,13 +1,12 @@
 package calculator;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
-        int[] results = new int[10];
-        int count = 0;
-        int n = 0;
+        ArrayList<Integer> results = new ArrayList<Integer>();
         Scanner sc = new Scanner(System.in);
 
         /* 반복 계산 구현 */
@@ -50,10 +49,15 @@ public class App {
             /* 결과 도출 */
             System.out.println("결과 : " + sum);
 
-            /* 결과 배열 저장 */
-            results[count] = sum;
-            /* 배열이 꽉찼을땐 count는 10 여기서 계속 계산을 진행한다면 if-else문 발동 */
-            count++;
+            /* 결과 List 배열 저장 */
+            results.add(sum);
+
+            /* 연산 결과 삭제 */
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제 하시겠습니까? (remove 입력)");
+            String remove = sc.nextLine();
+            if (remove.equals("remove")){
+                results.remove(0);
+            }
 
             /* 종료 여부 확인 */
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
@@ -62,15 +66,6 @@ public class App {
             if (exit.equals("exit")) {
                 System.out.println("계산을 종료 하셨습니다.");
                 return;
-            } else {
-                /* 계산을 11번째 시도할때 배열을 이동시켜 배열의 빈공간 창출 */
-                if(count == 10){
-                    for (int i = 1; i < results.length; i++){
-                        results[n] = results[i];
-                        n++;
-                    }
-                    count = 9;
-                }
             }
         }
     }
