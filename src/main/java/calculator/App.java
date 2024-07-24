@@ -54,6 +54,7 @@ public class App {
                 System.out.println("계산을 종료 하셨습니다.");
                 return;
             }
+
         }
     }
 }
