@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
+        int[] results = new int[10];
+        int count = 0;
         Scanner sc = new Scanner(System.in);
 
         /* 반복 계산 구현 */
@@ -46,6 +48,11 @@ public class App {
             }
             /* 결과 도출 */
             System.out.println("결과 : " + sum);
+            results[count] = sum;
+            System.out.println("배열 : " + results[0] + ", 배열 인덱스 : " + results[count]);
+            System.out.println("배열의 넣을때 인덱스 : " + count);
+            count++;
+            System.out.println("넣고 난 후 인덱스 : " + count);
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.nextLine();
