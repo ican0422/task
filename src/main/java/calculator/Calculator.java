@@ -3,13 +3,12 @@ package calculator;
 import java.util.ArrayList;
 
 public class Calculator {
-    ArrayList<Integer> results = new ArrayList<Integer>();
+    private ArrayList<Integer> results = new ArrayList<Integer>();
     /* 계산결과 변수 초기화 */
     int sum = 0;
 
     /* 연산 함수 */
     public int calculate(int num1, int num2, char operator){
-
 
         /* 사칙 연산 제어문 */
         if(operator == '+') {
@@ -33,7 +32,7 @@ public class Calculator {
     }
 
     /* 연산 결과 저장 함수 */
-    private ArrayList<Integer> results(int sum) {
+    public ArrayList<Integer> results(int sum) {
         /* 결과 List 배열 저장 */
         results.add(sum);
 
@@ -58,12 +57,12 @@ public class Calculator {
         }
     }
 
-    /* 연산 결과 저장 함수 캡슐화 */
-    public int getResults(){
-        return sum;
+    /* results 변수 캡슐화 */
+    public ArrayList<Integer> getResults(){
+        return results;
     }
-    public void setResults(int sum){
-        this.sum = sum;
+    public void setResults(ArrayList<Integer> results){
+        this.results = results;
     }
 
 }

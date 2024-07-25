@@ -37,7 +37,7 @@ public class App {
             System.out.println("결과 : " + sum);
 
             /* 결과 List 배열 저장 함수*/
-            ca.setResults(sum);
+            ca.results(sum);
 
             /* 연산 결과 삭제 함수 */
             System.out.println("가장 먼저 저장된 연산 결과를 삭제 하시겠습니까? (remove 입력)");
