@@ -3,7 +3,9 @@ package calculator;
 import java.util.ArrayList;
 
 public class Calculator {
+    /* ArrayList 호출 및 캡슐화 */
     private ArrayList<Integer> results = new ArrayList<Integer>();
+
     /* 계산결과 변수 초기화 */
     int sum = 0;
 
@@ -57,7 +59,7 @@ public class Calculator {
         }
     }
 
-    /* results 변수 캡슐화 */
+    /* ArrayList 변수 캡슐화 */
     public ArrayList<Integer> getResults(){
         return results;
     }
