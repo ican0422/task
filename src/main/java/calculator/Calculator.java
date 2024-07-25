@@ -8,7 +8,7 @@ public class Calculator {
 
     /* 계산결과 변수 초기화 */
     int sum = 0;
-
+    
     /* 생성자 초기화 */
     public Calculator(){
         results = new ArrayList<>();
