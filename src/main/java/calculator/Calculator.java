@@ -4,10 +4,15 @@ import java.util.ArrayList;
 
 public class Calculator {
     /* ArrayList 호출 및 캡슐화 */
-    private ArrayList<Integer> results = new ArrayList<Integer>();
+    private ArrayList<Integer> results;
 
     /* 계산결과 변수 초기화 */
     int sum = 0;
+
+    /* 생성자 초기화 */
+    public Calculator(){
+        results = new ArrayList<>();
+    }
 
     /* 연산 함수 */
     public int calculate(int num1, int num2, char operator){
