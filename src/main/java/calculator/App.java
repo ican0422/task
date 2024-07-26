@@ -17,7 +17,6 @@ public class App {
 
         while (isRunning) {
 
-
             /* 사칙연산과 원의 넓이 구하는 조건 받기 */
             System.out.println("사칙연산 1번, 원의 넓이 구하기 2번");
             int caseNum = sc.nextInt();

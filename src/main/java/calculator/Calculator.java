@@ -52,7 +52,7 @@ public class Calculator {
         if (remove.equals("remove")){
             results.remove(0);
         } else {
-            System.out.println("잘 못된 입력입니다.");
+            System.out.println("삭제 하지 않습니다.");
         }
     }
 
@@ -61,7 +61,7 @@ public class Calculator {
         if (inquiry.equals("inquiry")){
             System.out.println("저장된 연산 결과 : " + results.toString());
         } else {
-            System.out.println("잘 못된 입력입니다.");
+            System.out.println("출력 하지 않습니다.");
         }
     }
 
