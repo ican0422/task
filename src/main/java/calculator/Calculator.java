@@ -15,7 +15,7 @@ public class Calculator {
     }
 
     /* 연산 메서드 */
-    public int calculate(int num1, int num2, char operator){
+    public int calculate(int num1, int num2, char operator) throws CalculatorException{
 
         /* 사칙 연산 제어문 */
         if(operator == '+') {
@@ -28,11 +28,15 @@ public class Calculator {
             sum = num1 * num2;
         }
         if(operator == '/') {
+            /* 분모가 0이면 예외처리 메세지 보여준다. */
+            if(num2 == 0){
+                throw  new CalculatorException();
+            }
             sum = num1 / num2;
         }
+        /* 기호 외에 다른 것이 들어오면 예외처리 메세지를 보여준다. */
         if(operator != '+' && operator != '-' && operator != '*' && operator != '/') {
-            System.out.println("올바르지 않은 기호를 입력하셨습니다.");
-            sum = 0;
+            throw  new CalculatorException();
         }
 
         return sum;
