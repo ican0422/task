@@ -1,8 +1,10 @@
 package calculator;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class Calculator {
+
     /* ArrayList 호출 및 캡슐화 */
     private ArrayList<Integer> results;
 
@@ -30,24 +32,19 @@ public class Calculator {
         if(operator == '/') {
             /* 분모가 0이면 예외처리 메세지 보여준다. */
             if(num2 == 0){
-                throw  new CalculatorException();
+                throw  new CalculatorException("분모가 0 입니다.");
             }
             sum = num1 / num2;
         }
         /* 기호 외에 다른 것이 들어오면 예외처리 메세지를 보여준다. */
         if(operator != '+' && operator != '-' && operator != '*' && operator != '/') {
-            throw  new CalculatorException();
+            throw  new CalculatorException("맞지 않는 연산 기호를 입력하셨습니다.");
         }
 
-        return sum;
-    }
-
-    /* 연산 결과 저장 메서드 */
-    public ArrayList<Integer> results(int sum) {
-        /* 결과 List 배열 저장 */
+        /* 연산 값 리스트에 저장 */
         results.add(sum);
 
-        return results;
+        return sum;
     }
 
     /* 연산 결과 가장 먼저 입력된 수를 삭제하는 메서드 */

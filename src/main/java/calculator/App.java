@@ -14,7 +14,9 @@ public class App {
 
         /* 반복 계산 구현 */
         boolean isRunning = true;
+
         while (isRunning) {
+
 
             /* 사칙연산과 원의 넓이 구하는 조건 받기 */
             System.out.println("사칙연산 1번, 원의 넓이 구하기 2번");
@@ -22,31 +24,43 @@ public class App {
 
             /* 사칙연산 */
             if (caseNum == 1){
-                /* 첫 번째 입력 값 받기 */
-                System.out.print("첫 번째 숫자를 입력하세요: ");
-                int num1 = sc.nextInt();
+                while (true){
+                    /* 첫 번째 입력 값 받기 */
+                    System.out.print("첫 번째 숫자를 입력하세요: ");
+                    int num1 = sc.nextInt();
 
-                /* 사칙연산 기호 받기 */
-                System.out.print("사칙연산 기호를 입력하세요(+, -, *, /): ");
-                char operator = sc.next().charAt(0);
+                    /* 사칙연산 기호 받기 */
+                    System.out.print("사칙연산 기호를 입력하세요(+, -, *, /): ");
+                    char operator = sc.next().charAt(0);
 
-                /* 두 번째 입력 값 받기 */
-                System.out.print("두 번째 숫자를 입력하세요: ");
-                int num2 = sc.nextInt();
+                    /* 두 번째 입력 값 받기 */
+                    System.out.print("두 번째 숫자를 입력하세요: ");
+                    int num2 = sc.nextInt();
 
-                /* 버퍼 초기화 */
-                sc.nextLine();
+                    /* 버퍼 초기화 */
+                    sc.nextLine();
 
-                /* 연산 함수 */
-                int sum = ca.calculate(num1,num2,operator);
+                    /* 연산 시작 */
+                    try {
+                        int sum = ca.calculate(num1,num2,operator);
 
-                /* 결과 도출 */
-                System.out.println("결과 : " + sum);
+                        /* 결과 도출 */
+                        System.out.println("결과 : " + sum);
 
-                /* 결과 List 배열 저장 메서드*/
-                ca.results(sum);
+                        break;
+                    } catch (CalculatorException e) {
+                        System.out.println(e.getMessage());
+                    } finally {
+                        /* 계산을 종료하는지 물어보는 문구 출력 및 대답 듣기 */
+                        System.out.print(" 계산을 종료 하시겠습니까? (y 또는 n를 입력하시면 입력해주세요.) : ");
+                        char exit_start = sc.next().charAt(0);
 
-
+                        /* 만약 y 혹은 Y를 입력하면 계산 종료 */
+                        if (exit_start == 'y' || exit_start == 'Y'){
+                            return;
+                        }
+                    }
+                }
             }
             /* 원 넓이 구하는 연산 */
             if (caseNum == 2){
@@ -62,9 +76,6 @@ public class App {
 
                 /* 원의 넓이 결과 도출 */
                 System.out.println("원의 넓이 : " + circleArea + " cm^2");
-
-                /* 결과 List 배열 저장 메서드*/
-                cc.circleAreaResults(circleArea);
             }
 
             /* 연산 결과 삭제 함수 */

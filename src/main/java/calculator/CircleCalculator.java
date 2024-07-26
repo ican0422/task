@@ -22,15 +22,10 @@ public class CircleCalculator {
          */
         double circleArea = num * num * pI;
 
-        return circleArea;
-    }
-
-    /* 원의 넓이 계산 결과 저장 메서드 */
-    public ArrayList<Double> circleAreaResults(double circleArea){
-        /* 결과 List 배열 저장 */
+        /* 연산 결과 리스트에 저장 */
         circleAreaResults.add(circleArea);
 
-        return circleAreaResults;
+        return circleArea;
     }
 
     /* 연산 결과 가장 먼저 입력된 수를 삭제하는 메서드 */
