@@ -10,7 +10,7 @@ public class App {
 
         /* 클래스 호출 */
         Calculator ca = new Calculator();
-        CircleAreaCalculator cc = new CircleAreaCalculator();
+        CircleCalculator cc = new CircleCalculator();
 
         /* 반복 계산 구현 */
         boolean isRunning = true;
@@ -61,7 +61,7 @@ public class App {
                 double circleArea = cc.calculateCircleArea(num);
 
                 /* 원의 넓이 결과 도출 */
-                System.out.println("원의 넓이 : " + circleArea);
+                System.out.println("원의 넓이 : " + circleArea + " cm^2");
 
                 /* 결과 List 배열 저장 메서드*/
                 cc.circleAreaResults(circleArea);

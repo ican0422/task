@@ -2,7 +2,7 @@ package calculator;
 
 import java.util.ArrayList;
 
-public class CircleAreaCalculator {
+public class CircleCalculator {
     /* PI */
     /* 3.14라는 파이는 함수를 통해서 사용 되어야 하고, 변하는 안되는 상수 */
     static final double pI = 3.14;
@@ -11,7 +11,7 @@ public class CircleAreaCalculator {
     private ArrayList<Double> circleAreaResults;
 
     /* 생성자 초기화 */
-    public CircleAreaCalculator(){
+    public CircleCalculator(){
         circleAreaResults = new ArrayList<>();
     }
 
