@@ -9,7 +9,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         /* 클래스 호출 */
-        Calculator ca = new Calculator();
+        ArithmeticCalculator ac = new ArithmeticCalculator();
         CircleCalculator cc = new CircleCalculator();
 
         /* 반복 계산 구현 */
@@ -41,7 +41,7 @@ public class App {
 
                     /* 연산 시작 */
                     try {
-                        int sum = ca.calculate(num1,num2,operator);
+                        double sum = ac.calculate(num1,num2,operator);
 
                         /* 결과 도출 */
                         System.out.println("결과 : " + sum);
@@ -49,7 +49,7 @@ public class App {
                         break;
                     } catch (CalculatorException e) {
                         System.out.println(e.getMessage());
-                    } finally {
+
                         /* 계산을 종료하는지 물어보는 문구 출력 및 대답 듣기 */
                         System.out.print(" 계산을 종료 하시겠습니까? (y 또는 n를 입력하시면 입력해주세요.) : ");
                         char exit_start = sc.next().charAt(0);
@@ -82,11 +82,11 @@ public class App {
             String remove = sc.nextLine();
             /* 사칙연산 결과 삭제 */
             if(caseNum == 1){
-                ca.remove(remove);
+                ac.remove(remove);
             }
             /* 원의 넓이 결과 삭제 */
             if (caseNum == 2){
-                cc.circleAreaRemove(remove);
+                cc.remove(remove);
             }
 
 
@@ -95,11 +95,11 @@ public class App {
             String inquiry = sc.nextLine();
             /* 사칙연산 결과들 조회 */
             if(caseNum == 1){
-                ca.inquiry(inquiry);
+                ac.inquiry(inquiry);
             }
             /* 원의 넓이 결과들 조회 */
             if(caseNum == 2){
-                cc.circleAreaInquiry(inquiry);
+                cc.inquiry(inquiry);
             }
 
 
