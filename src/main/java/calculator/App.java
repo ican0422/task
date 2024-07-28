@@ -52,10 +52,10 @@ public class App {
 
                         /* 계산을 종료하는지 물어보는 문구 출력 및 대답 듣기 */
                         System.out.print(" 계산을 종료 하시겠습니까? (y 또는 n를 입력하시면 입력해주세요.) : ");
-                        char exit_start = sc.next().charAt(0);
+                        String exit_start = sc.nextLine();
 
                         /* 만약 y 혹은 Y를 입력하면 계산 종료 */
-                        if (exit_start == 'y' || exit_start == 'Y'){
+                        if (exit_start.equals("y") || exit_start.equals("Y")){
                             return;
                         }
                     }
