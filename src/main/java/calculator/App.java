@@ -1,9 +1,6 @@
 package calculator;
 
-import calculator.operations.AddOperator;
-import calculator.operations.DivideOperator;
-import calculator.operations.MultiplyOperator;
-import calculator.operations.SubtractOperator;
+import calculator.operations.*;
 
 import java.util.Scanner;
 
@@ -18,7 +15,8 @@ public class App {
                 new AddOperator(),
                 new SubtractOperator(),
                 new MultiplyOperator(),
-                new DivideOperator()
+                new DivideOperator(),
+                new ModOperator()
         );
         CircleCalculator cc = new CircleCalculator();
 
@@ -39,7 +37,7 @@ public class App {
                     int num1 = sc.nextInt();
 
                     /* 사칙연산 기호 받기 */
-                    System.out.print("사칙연산 기호를 입력하세요(+, -, *, /): ");
+                    System.out.print("사칙연산 기호를 입력하세요(+, -, *, /, %): ");
                     char operator = sc.next().charAt(0);
 
                     /* 두 번째 입력 값 받기 */

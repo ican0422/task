@@ -5,22 +5,25 @@ import calculator.operations.*;
 import java.util.ArrayList;
 
 public class ArithmeticCalculator extends Calculator{
-
+    /* 연산 클래스 인스턴스 */
     private final AddOperator addOperator;
     private final SubtractOperator subtractOperator;
     private final MultiplyOperator multiplyOperator;
     private final DivideOperator divideOperator;
+    private final ModOperator modOperator;
 
     /* 생성자 초기화 */
     public ArithmeticCalculator(AddOperator addOperator,
                                 SubtractOperator subtractOperator,
                                 MultiplyOperator multiplyOperator,
-                                DivideOperator divideOperator){
+                                DivideOperator divideOperator,
+                                ModOperator modOperator){
         super();
         this.addOperator = addOperator;
         this.subtractOperator = subtractOperator;
         this.multiplyOperator = multiplyOperator;
         this.divideOperator = divideOperator;
+        this.modOperator = modOperator;
     }
 
     /* 계산결과 변수 초기화 */
@@ -46,8 +49,11 @@ public class ArithmeticCalculator extends Calculator{
             }
             sum = divideOperator.operate(num1,num2);
         }
+        if(operator == '%'){
+            sum = modOperator.operate(num1, num2);
+        }
         /* 기호 외에 다른 것이 들어오면 예외처리 메세지를 보여준다. */
-        if(operator != '+' && operator != '-' && operator != '*' && operator != '/') {
+        if(operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%') {
             throw  new CalculatorException("맞지 않는 연산 기호를 입력하셨습니다.");
         }
 
