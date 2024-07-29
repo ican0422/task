@@ -1,36 +1,53 @@
 package calculator;
 
+import calculator.operations.AddOperator;
+import calculator.operations.DivideOperator;
+import calculator.operations.MultiplyOperator;
+import calculator.operations.SubtractOperator;
+
 import java.util.ArrayList;
 
 public class ArithmeticCalculator extends Calculator{
 
+    private final AddOperator addOperator;
+    private final SubtractOperator subtractOperator;
+    private final MultiplyOperator multiplyOperator;
+    private final DivideOperator divideOperator;
+
     /* 생성자 초기화 */
-    public ArithmeticCalculator(){
+    public ArithmeticCalculator(AddOperator addOperator,
+                                SubtractOperator subtractOperator,
+                                MultiplyOperator multiplyOperator,
+                                DivideOperator divideOperator){
         super();
+        this.addOperator = addOperator;
+        this.subtractOperator = subtractOperator;
+        this.multiplyOperator = multiplyOperator;
+        this.divideOperator = divideOperator;
     }
 
     /* 계산결과 변수 초기화 */
-    double sum = 0.0;
+    double sum = 0;
 
     /* 연산 메서드 */
     public double calculate(int num1, int num2, char operator) throws CalculatorException{
 
         /* 사칙 연산 제어문 */
         if(operator == '+') {
-            sum = num1 + num2;
+            sum = addOperator.operate(num1,num2);
         }
         if(operator == '-') {
-            sum = num1 - num2;
+            sum = subtractOperator.operate(num1,num2);
         }
         if(operator == '*') {
-            sum = num1 * num2;
+            sum = multiplyOperator.operate(num1,num2);
         }
         if(operator == '/') {
             /* 분모가 0이면 예외처리 메세지 보여준다. */
             if(num2 == 0){
                 throw  new CalculatorException("분모가 0 입니다.");
             }
-            sum = num1 / num2;
+            sum = divideOperator.operate(num1,num2);
         }
         /* 기호 외에 다른 것이 들어오면 예외처리 메세지를 보여준다. */
         if(operator != '+' && operator != '-' && operator != '*' && operator != '/') {

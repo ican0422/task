@@ -1,5 +1,10 @@
 package calculator;
 
+import calculator.operations.AddOperator;
+import calculator.operations.DivideOperator;
+import calculator.operations.MultiplyOperator;
+import calculator.operations.SubtractOperator;
+
 import java.util.Scanner;
 
 public class App {
@@ -9,7 +14,12 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         /* 클래스 호출 */
-        ArithmeticCalculator ac = new ArithmeticCalculator();
+        ArithmeticCalculator ac = new ArithmeticCalculator(
+                new AddOperator(),
+                new SubtractOperator(),
+                new MultiplyOperator(),
+                new DivideOperator()
+        );
         CircleCalculator cc = new CircleCalculator();
 
         /* 반복 계산 구현 */
