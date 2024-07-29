@@ -11,18 +11,11 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         /* 클래스 호출 */
-        ArithmeticCalculator ac = new ArithmeticCalculator(
-                new AddOperator(),
-                new SubtractOperator(),
-                new MultiplyOperator(),
-                new DivideOperator(),
-                new ModOperator()
-        );
+        ArithmeticCalculator ac = new ArithmeticCalculator();
         CircleCalculator cc = new CircleCalculator();
 
         /* 반복 계산 구현 */
         boolean isRunning = true;
-
         while (isRunning) {
 
             /* 사칙연산과 원의 넓이 구하는 조건 받기 */
@@ -97,7 +90,6 @@ public class App {
                 cc.remove(remove);
             }
 
-
             /* 저장된 연산 결과 전부 조회 함수*/
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             String inquiry = sc.nextLine();
@@ -109,7 +101,6 @@ public class App {
             if(caseNum == 2){
                 cc.inquiry(inquiry);
             }
-
 
             /* 종료 여부 확인 */
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");

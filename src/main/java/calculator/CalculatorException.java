@@ -1,6 +1,6 @@
 package calculator;
 
-public class CalculatorException extends Exception{
+public class CalculatorException extends RuntimeException{
     public CalculatorException(String type){
         super(type);
     }
