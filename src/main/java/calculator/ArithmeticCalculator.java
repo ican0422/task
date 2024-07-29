@@ -1,9 +1,6 @@
 package calculator;
 
-import calculator.operations.AddOperator;
-import calculator.operations.DivideOperator;
-import calculator.operations.MultiplyOperator;
-import calculator.operations.SubtractOperator;
+import calculator.operations.*;
 
 import java.util.ArrayList;
 
