@@ -2,7 +2,7 @@ package calculator.operations;
 
 public class MultiplyOperator implements OperatorInterface {
     @Override
-    public double operate(int num1, int num2) {
-        return num1 * num2;
+    public double operate(Number num1, Number num2) {
+        return num1.doubleValue() * num2.doubleValue();
     }
 }

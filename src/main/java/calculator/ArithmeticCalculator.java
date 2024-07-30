@@ -13,7 +13,7 @@ public class ArithmeticCalculator extends Calculator{
     /* 계산결과 변수 초기화 */
     double sum = 0;
     /* 연산 메서드 */
-    public double calculate(int num1, int num2, char operator) throws CalculatorException{
+    public <T extends Number> double calculate(T num1, T num2, char operator) throws CalculatorException{
         OperatorType op = OperatorType.getOpertor(operator);
 
         /* 사칙 연산 제어문 */
@@ -32,7 +32,7 @@ public class ArithmeticCalculator extends Calculator{
         if(op == OperatorType.DIVIDE) {
             DivideOperator div = new DivideOperator();
             /* 분모가 0이면 예외처리 메세지 보여준다. */
-            if(num2 == 0){
+            if(num2.doubleValue() == 0){
                 throw  new CalculatorException("분모가 0 입니다.");
             }
             sum = div.operate(num1,num2);

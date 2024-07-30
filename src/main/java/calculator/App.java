@@ -22,23 +22,31 @@ public class App {
             System.out.println("사칙연산 1번, 원의 넓이 구하기 2번");
             int caseNum = sc.nextInt();
 
+            /* 버퍼 초기화 */
+            sc.nextLine();
+
             /* 사칙연산 */
             if (caseNum == 1){
                 while (true){
                     /* 첫 번째 입력 값 받기 */
                     System.out.print("첫 번째 숫자를 입력하세요: ");
-                    int num1 = sc.nextInt();
+                    String input1 = sc.nextLine();
 
                     /* 사칙연산 기호 받기 */
                     System.out.print("사칙연산 기호를 입력하세요(+, -, *, /, %): ");
                     char operator = sc.next().charAt(0);
 
-                    /* 두 번째 입력 값 받기 */
-                    System.out.print("두 번째 숫자를 입력하세요: ");
-                    int num2 = sc.nextInt();
-
                     /* 버퍼 초기화 */
                     sc.nextLine();
+
+                    /* 두 번째 입력 값 받기 */
+                    System.out.print("두 번째 숫자를 입력하세요: ");
+                    String input2 = sc.nextLine();
+
+
+
+                    Number num1 = ac.parseNumber(input1);
+                    Number num2 = ac.parseNumber(input2);
 
                     /* 연산 시작 */
                     try {
