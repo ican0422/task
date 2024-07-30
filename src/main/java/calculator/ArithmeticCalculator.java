@@ -13,7 +13,7 @@ public class ArithmeticCalculator extends Calculator{
     /* 계산결과 변수 초기화 */
     double sum = 0;
     /* 연산 메서드 */
-    public <T extends Number> double calculate(T num1, T num2, char operator) throws CalculatorException{
+    public <T extends Number> double calculate(Number num1, Number num2, char operator) throws CalculatorException{
         OperatorType op = OperatorType.getOpertor(operator);
 
         /* 사칙 연산 제어문 */
