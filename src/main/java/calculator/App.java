@@ -55,6 +55,9 @@ public class App {
                         /* 결과 도출 */
                         System.out.println("결과 : " + sum);
 
+                        /* 결과의 더 큰수를 보여줌 */
+                        ac.lam(sum);
+
                         break;
                     } catch (CalculatorException e) {
                         System.out.println(e.getMessage());
@@ -84,6 +87,8 @@ public class App {
 
                 /* 원의 넓이 결과 도출 */
                 System.out.println("원의 넓이 : " + circleArea + " cm^2");
+
+                cc.lam(circleArea);
             }
 
             /* 연산 결과 삭제 함수 */

@@ -70,6 +70,11 @@ public class ArithmeticCalculator extends Calculator{
         }
     }
 
+    @Override
+    public void lam(double sum) {
+        results.stream().filter( i -> sum < i).forEach(System.out::println);
+    }
+
     /* ArrayList 변수 캡슐화 */
     public ArrayList<Double> getResults(){
         return results;

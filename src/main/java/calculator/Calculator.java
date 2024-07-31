@@ -29,4 +29,6 @@ public abstract class Calculator {
 
     /* 저장된 연산 결과 출력하는 메서드 */
     public abstract void inquiry(String inquiry);
+
+    public abstract void lam(double sum);
 }
