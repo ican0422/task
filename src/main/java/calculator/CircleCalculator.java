@@ -24,7 +24,7 @@ public class CircleCalculator extends Calculator {
 
         return circleArea;
     }
-
+    /* 삭제 */
     @Override
     public void remove(String remove){
         if (remove.equals("remove")){
@@ -33,7 +33,7 @@ public class CircleCalculator extends Calculator {
             System.out.println("삭제 하지 않습니다.");
         }
     }
-
+    /* 조회 */
     @Override
     public void inquiry(String inquiry){
         if (inquiry.equals("inquiry")){
@@ -42,7 +42,7 @@ public class CircleCalculator extends Calculator {
             System.out.println("출력 하지 않습니다.");
         }
     }
-
+    /* 결과보다 저장된 더 큰 수 출력 */
     @Override
     public void lam(double circleArea) {
         results.stream().filter( i -> circleArea < i).forEach(System.out::println);

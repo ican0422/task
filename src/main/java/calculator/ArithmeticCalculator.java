@@ -14,6 +14,7 @@ public class ArithmeticCalculator extends Calculator{
     double sum = 0;
     /* 연산 메서드 */
     public <T extends Number> double calculate(Number num1, Number num2, char operator) throws CalculatorException{
+        /* 기호 Enum 가져오기 */
         OperatorType op = OperatorType.getOpertor(operator);
 
         /* 사칙 연산 제어문 */
@@ -52,6 +53,7 @@ public class ArithmeticCalculator extends Calculator{
         return sum;
     }
 
+    /* 삭제 */
     @Override
     public void remove(String remove){
         if (remove.equals("remove")){
@@ -61,6 +63,7 @@ public class ArithmeticCalculator extends Calculator{
         }
     }
 
+    /* 조회 */
     @Override
     public void inquiry(String inquiry){
         if (inquiry.equals("inquiry")){
@@ -70,6 +73,7 @@ public class ArithmeticCalculator extends Calculator{
         }
     }
 
+    /* 람다식 적용 결과 보다 저장된 더 큰 수 조회 */
     @Override
     public void lam(double sum) {
         results.stream().filter( i -> sum < i).forEach(System.out::println);

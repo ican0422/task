@@ -30,5 +30,6 @@ public abstract class Calculator {
     /* 저장된 연산 결과 출력하는 메서드 */
     public abstract void inquiry(String inquiry);
 
+    /* 람다식으로 결과보다 저장된 더 큰 수를 조회하는 메서드 */
     public abstract void lam(double sum);
 }

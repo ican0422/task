@@ -43,8 +43,7 @@ public class App {
                     System.out.print("두 번째 숫자를 입력하세요: ");
                     String input2 = sc.nextLine();
 
-
-
+                    /* 제네릭 변환 */
                     Number num1 = ac.parseNumber(input1);
                     Number num2 = ac.parseNumber(input2);
 
