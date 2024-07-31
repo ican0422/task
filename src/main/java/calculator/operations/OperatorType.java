@@ -27,7 +27,4 @@ public enum OperatorType {
         }
         throw new CalculatorException("기호를 입력해주세요.");
     }
-
-
-
 }
