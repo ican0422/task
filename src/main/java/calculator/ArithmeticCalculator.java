@@ -48,7 +48,7 @@ public class ArithmeticCalculator extends Calculator{
         }
 
         /* 연산 값 리스트에 저장 */
-        results.add(sum);
+        getResults().add(sum);
 
         return sum;
     }
@@ -57,7 +57,7 @@ public class ArithmeticCalculator extends Calculator{
     @Override
     public void remove(String remove){
         if (remove.equals("remove")){
-            results.remove(0);
+            getResults().remove(0);
         } else {
             System.out.println("삭제 하지 않습니다.");
         }
@@ -67,7 +67,7 @@ public class ArithmeticCalculator extends Calculator{
     @Override
     public void inquiry(String inquiry){
         if (inquiry.equals("inquiry")){
-            System.out.println("저장된 연산 결과 : " + results.toString());
+            System.out.println("저장된 연산 결과 : " + getResults().toString());
         } else {
             System.out.println("출력 하지 않습니다.");
         }
@@ -76,14 +76,14 @@ public class ArithmeticCalculator extends Calculator{
     /* 람다식 적용 결과 보다 저장된 더 큰 수 조회 */
     @Override
     public void lam(double sum) {
-        results.stream().filter( i -> sum < i).forEach(System.out::println);
+        getResults().stream().filter( i -> sum < i).forEach(System.out::println);
     }
 
-    /* ArrayList 변수 캡슐화 */
-    public ArrayList<Double> getResults(){
-        return results;
-    }
-    public void setResults(ArrayList<Double> results){
-        this.results = results;
-    }
+//    /* ArrayList 변수 캡슐화 */
+//    public ArrayList<Double> getResults(){
+//        return results;
+//    }
+//    public void setResults(ArrayList<Double> results){
+//        this.results = results;
+//    }
 }

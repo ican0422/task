@@ -4,7 +4,15 @@ import java.util.ArrayList;
 
 public abstract class Calculator {
     /* ArrayList 호출 및 캡슐화 */
-    protected ArrayList<Double> results;
+    private final ArrayList<Double> results;
+
+    /* ArrayList 변수 캡슐화 */
+    public ArrayList<Double> getResults(){
+        return results;
+    }
+//    public void setResults(ArrayList<Double> results){
+//        this.results = results;
+//    }
 
     /* 생성자 초기화 */
     public Calculator(){

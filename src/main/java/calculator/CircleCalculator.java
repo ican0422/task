@@ -20,7 +20,7 @@ public class CircleCalculator extends Calculator {
         double circleArea = num * num * pI;
 
         /* 연산 결과 리스트에 저장 */
-        results.add(circleArea);
+        getResults().add(circleArea);
 
         return circleArea;
     }
@@ -28,7 +28,7 @@ public class CircleCalculator extends Calculator {
     @Override
     public void remove(String remove){
         if (remove.equals("remove")){
-            results.remove(0);
+            getResults().remove(0);
         } else {
             System.out.println("삭제 하지 않습니다.");
         }
@@ -37,7 +37,7 @@ public class CircleCalculator extends Calculator {
     @Override
     public void inquiry(String inquiry){
         if (inquiry.equals("inquiry")){
-            System.out.println("저장된 연산 결과 : " + results.toString());
+            System.out.println("저장된 연산 결과 : " + getResults().toString());
         } else {
             System.out.println("출력 하지 않습니다.");
         }
@@ -45,15 +45,15 @@ public class CircleCalculator extends Calculator {
     /* 결과보다 저장된 더 큰 수 출력 */
     @Override
     public void lam(double circleArea) {
-        results.stream().filter( i -> circleArea < i).forEach(System.out::println);
+        getResults().stream().filter( i -> circleArea < i).forEach(System.out::println);
     }
 
-    /* 원의 넓이 결과값을 저장하는 ArrayList 변수 캡슐화 */
-    public ArrayList<Double> getCircleAreaResults(){
-        return results;
-    }
-    public void setCircleAreaResults(ArrayList<Double> results){
-        this.results = results;
-    }
+//    /* 원의 넓이 결과값을 저장하는 ArrayList 변수 캡슐화 */
+//    public ArrayList<Double> getCircleAreaResults(){
+//        return results;
+//    }
+//    public void setCircleAreaResults(ArrayList<Double> results){
+//        this.results = results;
+//    }
 
 }
