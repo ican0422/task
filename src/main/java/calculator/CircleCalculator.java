@@ -48,12 +48,4 @@ public class CircleCalculator extends Calculator {
         getResults().stream().filter( i -> circleArea < i).forEach(System.out::println);
     }
 
-//    /* 원의 넓이 결과값을 저장하는 ArrayList 변수 캡슐화 */
-//    public ArrayList<Double> getCircleAreaResults(){
-//        return results;
-//    }
-//    public void setCircleAreaResults(ArrayList<Double> results){
-//        this.results = results;
-//    }
-
 }

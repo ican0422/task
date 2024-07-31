@@ -10,9 +10,6 @@ public abstract class Calculator {
     public ArrayList<Double> getResults(){
         return results;
     }
-//    public void setResults(ArrayList<Double> results){
-//        this.results = results;
-//    }
 
     /* 생성자 초기화 */
     public Calculator(){

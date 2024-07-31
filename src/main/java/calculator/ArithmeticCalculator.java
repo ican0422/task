@@ -78,12 +78,4 @@ public class ArithmeticCalculator extends Calculator{
     public void lam(double sum) {
         getResults().stream().filter( i -> sum < i).forEach(System.out::println);
     }
-
-//    /* ArrayList 변수 캡슐화 */
-//    public ArrayList<Double> getResults(){
-//        return results;
-//    }
-//    public void setResults(ArrayList<Double> results){
-//        this.results = results;
-//    }
 }
